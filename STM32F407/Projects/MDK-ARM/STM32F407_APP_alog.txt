@@ -1,0 +1,30 @@
+[project_search_path]: ./
+[map_search_path]: ./
+[project_file_path]: .//atk_f407.uvprojx
+[ map_file_path]: .//Output/STM32F407.map
+[parse_keil_map start]: 
+[Found keyword]: ----------Execution Region----------
+[name]:  ER_IROM1 
+[Exec base]: 0x8000000
+[Size]: 0x51d40
+[Max]: 0x100000
+[Found keyword]: ----------Execution Region----------
+[name]:  RW_IRAM1 
+[Exec base]: 0x20000000
+[Size]: 0x1f610
+[Max]: 0x2ffff
+[Found keyword]: ----------Execution Region----------
+[name]:  ER$$.ARM.__AT_0x68000000 
+[Exec base]: 0x68000000
+[Size]: 0xd480
+[Max]: 0xd480
+[parse_keil_map over printf bar]: 
+  RW_IRAM1 :0x20000000
+  192.00 KB :|¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö_______|   65.37 % (  125.52 KB /   192.00 KB) [68079 B]
+  ER$$.ARM.__AT_0x68000000 :0x68000000
+   53.13 KB :|¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö|  100.00 % (   53.13 KB /    53.13 KB) [0 B]
+  ER_IROM1 :0x8000000
+    1.00 MB :|¡ö¡ö¡ö¡ö¡ö¡ö______________|   31.96 % (    0.32 MB /     1.00 MB) [713408 B]
+[export csv]: ./STM32F407_sort_by_flash.csv
+[export csv]: ./STM32F407_sort_by_ram.csv
+[export xlsx]: STM32F407_analysis.xlsx
