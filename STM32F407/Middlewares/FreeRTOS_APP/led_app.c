@@ -17,14 +17,39 @@ TaskHandle_t LEDTask_Handler;           /* 任务句柄 */
 void led_task(void *pvParameters);      /* 任务函数 */
 
 
+
+void LED_On(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) 
+{
+    HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_SET);
+}
+
+void LED_Off(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) 
+{
+    HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_RESET);
+}
+
+void LED_Toggle(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) 
+{
+    HAL_GPIO_TogglePin(GPIOx, GPIO_Pin);
+}
+
 void led_task(void *pvParameters)
 {
-    pvParameters = pvParameters;
-
+    LED_Command_t cmd=LED_CMD_TOGGLE;
     while(1)
     {
-        LED0_TOGGLE();
-		usb_printf("\r\n123\r\n\r\n");
+        switch (cmd) 
+		{
+            case LED_CMD_ON:
+                LED_On(LED0_GPIO_PORT, LED0_GPIO_PIN);
+                break;
+            case LED_CMD_OFF:
+                LED_Off(LED0_GPIO_PORT, LED0_GPIO_PIN);
+                break;
+            case LED_CMD_TOGGLE:
+                LED_Toggle(LED0_GPIO_PORT, LED0_GPIO_PIN);
+                break;
+        }
         vTaskDelay(1000);
     }
 }

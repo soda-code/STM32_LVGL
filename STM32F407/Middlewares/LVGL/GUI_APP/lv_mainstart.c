@@ -16,6 +16,7 @@ static lv_obj_t *title;
 /* 定义图片部件、滑块部件 */
 static lv_obj_t *img;
 
+lv_timer_t *timer;
 
 uint8_t time_buf[50]={0}; 
 
@@ -31,6 +32,7 @@ void update_title(lv_obj_t * label)
 static void  timer_task( lv_event_t *e) 
 {
 	update_title(title);
+	
     //usb_printf("Timer task called: %d\n", count++);
 }
 
@@ -79,6 +81,7 @@ static void LV_Main_Win(void)
     /* 主体背景 */
     lv_obj_t *content = lv_win_get_content(win);                                                /* 获取主体 */
     lv_obj_set_style_bg_color(content, lv_color_hex(0xffffff),LV_STATE_DEFAULT);                /* 设置背景颜色 */
+
     /* 右侧按钮 */
     lv_obj_t *btn_close = lv_btn_create(content);                              /* 添加按钮 */
 	lv_obj_set_size(btn_close, 30, 30);
@@ -86,7 +89,7 @@ static void LV_Main_Win(void)
 	lv_obj_add_flag(btn_close, LV_OBJ_FLAG_CHECKABLE);
 
     lv_obj_add_event_cb(btn_close, btn_event_cb, LV_EVENT_CLICKED, NULL);                       /* 添加事件 */
-
+    timer= lv_timer_create(timer_task, 1000, 0);
     
 }
 
