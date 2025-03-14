@@ -82,7 +82,7 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>E:\stm32\STM32_LVGL\STM32F407\Projects\keil5_disp_size_bar.exe</UserProg1Name>
+            <UserProg1Name>E:\stm32\STM32_LVGL\STM32F407\Projects\Keil5_disp_size_bar_v0.3.exe</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -771,6 +771,11 @@
               <FileName>RTC_Read_app.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Middlewares\FreeRTOS_APP\RTC_Read_app.c</FilePath>
+            </File>
+            <File>
+              <FileName>key_app.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Middlewares\FreeRTOS_APP\key_app.c</FilePath>
             </File>
           </Files>
         </Group>

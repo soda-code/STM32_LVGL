@@ -13,6 +13,8 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "led_app.h"
+#include "KEY_app.h"
+
 #include "lvgl_app.h"
 #include "RTC_Read_app.h"
 
@@ -61,6 +63,7 @@ void start_task(void *pvParameters)
     pvParameters = pvParameters;
     taskENTER_CRITICAL();           /* 进入临界区 */
 	LED_APP_Init();
+	KEY_APP_Init();
 	LVGL_APP_Init();
 	RTC_APP_Init();
     taskEXIT_CRITICAL();            /* 退出临界区 */
